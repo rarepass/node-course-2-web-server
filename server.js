@@ -15,9 +15,11 @@ app.use((req, res, next) => {
     next();
 })
 
+/*
 app.use((req, res, next) => {
     res.render("maintenance.hbs")
 });
+*/
 
 
 hbs.registerPartials(__dirname + "/views/partials")
@@ -51,10 +53,18 @@ app.get("/about",(req,res)=>{
     })
 });
 
+
 app.get("/home",(req,res)=>{
     res.render("home.hbs", {
         pageTitle: "Home Page",
         welcomeMessage: "welcome to my page",
+    })
+});
+
+app.get("/projects",(req,res)=>{
+    res.render("projects.hbs", {
+        pageTitle: "projects Page",
+        welcomeMessage: "projects to my page",
     })
 });
 
